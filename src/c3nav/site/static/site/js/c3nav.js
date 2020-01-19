@@ -1346,7 +1346,8 @@ c3nav = {
         }
 
         // setup user location control
-        c3nav._userLocationControl = new UserLocationControl().addTo(c3nav.map);
+        // disabled for FOSDEM
+        // c3nav._userLocationControl = new UserLocationControl().addTo(c3nav.map);
 
         L.control.zoom({
             position: 'bottomright'

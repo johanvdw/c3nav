@@ -107,7 +107,9 @@
                         <i class="icon material-icons">place</i>
                         <input type="text" autocomplete="off" spellcheck="false" placeholder="{% trans 'Search any location…' %}">
                         <small></small>
+                        {% if app %}
                         <button class="button-clear locate material-icons">location_disabled</button>
+                        {% endif %}
                         <button class="button-clear clear material-icons">clear</button>
                     </div>
                     <div class="location locationinput empty" id="destination-input">
@@ -115,7 +117,9 @@
                         <input type="text" autocomplete="off" spellcheck="false" placeholder="{% trans 'Search any location…' %}">
                         <small></small>
                         <button class="button-clear random material-icons" href="/random/">casino</button>
+                        {% if app %}
                         <button class="button-clear locate material-icons">location_disabled</button>
+                        {% endif %}
                         <button class="button-clear clear material-icons">clear</button>
                     </div>
                     <i class="material-icons" id="route-dots">more_vert</i>
@@ -211,12 +215,14 @@
                     </section>
                 </div>
             </section>
+        {% if app %}
             <div class="app-ads">
                 <div id="android-app-ad">
                     <a href="#" class="close"><i class="material-icons">close</i></a>
                     {% blocktrans with play_url="https://play.google.com/store/apps/details?id=de.c3nav.droid" apk_url="https://github.com/c3nav/c3nav-android/releases" %}Get the c3nav Android app on <a href="{{ play_url }}" target="_blank">Google Play</a> or <a href="{{ apk_url }}" target="_blank">download the APK!</a>{% endblocktrans %}
                 </div>
             </div>
+        {% endif %}
         {% else %}
             <a id="embed-logo" class="embed-link" target="_blank">{% if header_logo %}<img src="{% static header_logo %}">{% else %}<span>c3nav</span>{% endif %}</a>
             <a id="embed-open" class="embed-link" target="_blank">{% trans 'open in c3nav' %}</a>
